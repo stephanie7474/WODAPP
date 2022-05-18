@@ -7,7 +7,7 @@ export default function HomeScreen(props) {
  
   return (
     <View style={styles.container}>
-    <Text>Bienvenue !</Text>
+    <Text style={styles.header}>Bienvenue !</Text>
     <Button
          text="Se Connecter !"
        buttonCustomStyles={{
@@ -42,5 +42,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  
-})
+  header: {
+    fontSize: 36,
+    marginBottom: 48
+  }
+});

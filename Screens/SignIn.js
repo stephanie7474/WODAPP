@@ -11,11 +11,13 @@ function SignIn({ navigation }) {
     <View style={styles.container}>
       <Text>Se connecter</Text>
       <TextInput
+      style={styles.input}
         placeholder="Email"
         value={email}
         onChangeText={text => setEmail(text)}
       />
       <TextInput
+      style={[styles.input, styles.inputContainer]}
         placeholder="Password"
         value={password}
         onChangeText={text => setPassword(text)}
@@ -43,6 +45,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
- 
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
 })

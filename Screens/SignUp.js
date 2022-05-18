@@ -11,21 +11,25 @@ function SignUp() {
   return (
     <View style={styles.container}>
       <TextInput 
+      style={styles.input}
       placeholder ="Firstname" 
       onChangeText={(value) => setText(value)}
        value={firstName} 
       />
       <TextInput
+      style={styles.input}
         placeholder="Name"
         value={name}
         onChangeText={setName}
       />
       <TextInput
+      style={styles.input}
         placeholder="Email"
         value={email}
         onChangeText={setEmail}
       />
       <TextInput
+      style={styles.input}
         placeholder="Password"
         value={password}
         onChangeText={setPassword}
@@ -55,5 +59,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
 })
