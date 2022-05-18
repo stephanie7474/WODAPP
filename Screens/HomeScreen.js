@@ -1,15 +1,15 @@
 import { useNavigation } from '@react-navigation/core'
-import { StyleSheet, Text, View, Button, } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Button from './Button'
 
-function HomeScreen({navigation}) {
+export default function HomeScreen(props) {
  
   return (
     <View style={styles.container}>
     <Text>Bienvenue !</Text>
     <Button
-       text="Se Connecter !"
+         text="Se Connecter !"
        buttonCustomStyles={{
          backgroundColor: "#4282F4",
          borderRadius: 8,
@@ -18,7 +18,7 @@ function HomeScreen({navigation}) {
        textCustomStyles={{
          color: "#3E3E3E"
        }}
-       onPress={() =>navigation.navigate('')}
+       onPress={() =>navigation.navigate('SignIn')}
      />
      <Button
        text="Creer un compte !"
@@ -32,6 +32,7 @@ function HomeScreen({navigation}) {
        }}
        onPress={() => navigation.navigate('SignUp')}
      />
+   
   </View>
  );
 }
@@ -41,5 +42,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
+  
 })
-export default HomeScreen

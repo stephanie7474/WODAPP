@@ -1,5 +1,6 @@
-import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Button } from 'react-native'
+import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native'
 import React,{useState}from 'react'
+import Button from './Button'
 
 function SignUp() {
   const [firstName, setFirstname] = useState('');
@@ -30,7 +31,17 @@ function SignUp() {
         onChangeText={setPassword}
         secureTextEntry
       />
-      <Button title="Sign in" onPress={() => signIn({ name, password, firstName, email })} />
+       <Button
+       text="Valider"
+       buttonCustomStyles={{
+         backgroundColor: "#4282F4",
+         borderRadius: 8,
+         marginTop: 10
+       }}
+       textCustomStyles={{
+         color: "#3E3E3E"
+       }}
+      onPress={() => signIn({ name, password, firstName, email })} />
     </View>
   );
 }
@@ -44,43 +55,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  inputContainer: {
-    width: '80%'
-  },
-  input: {
-    backgroundColor: 'white',
-    paddingHorizontal: 15,
-    paddingVertical: 10,
-    borderRadius: 10,
-    marginTop: 5,
-  },
-  buttonContainer: {
-    width: '60%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 40,
-  },
-  button: {
-    backgroundColor: '#4282F4',
-    width: '100%',
-    padding: 15,
-    borderRadius: 10,
-    alignItems: 'center',
-  },
-  buttonOutline: {
-    backgroundColor: 'white',
-    marginTop: 5,
-    borderColor: '#4282F4',
-    borderWidth: 2,
-  },
-  buttonText: {
-    color: '#3E3E3E',
-    fontWeight: '700',
-    fontSize: 16,
-  },
-  buttonOutlineText: {
-    color: '#3E3E3E',
-    fontWeight: '700',
-    fontSize: 16,
-  },
+
 })
