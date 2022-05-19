@@ -14,9 +14,9 @@ import {  TextInput, Text, View } from 'react-native';
 export default function App (){
   return(
 <View style={{flex:1}}>
-{/* //<HomeScreen />  */}
+<HomeScreen />  
  <SignIn/>
-{/* <SignUp />  */}
+ <SignUp />  
 </View>
   )
 }

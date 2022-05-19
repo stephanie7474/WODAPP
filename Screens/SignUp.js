@@ -60,9 +60,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    height: 40,
-    margin: 12,
+    marginBottom: 12,
     borderWidth: 1,
-    padding: 10,
+    borderRadius: 5,
+    borderColor: '#bbb',
+    paddingHorizontal: 14,
   },
 })

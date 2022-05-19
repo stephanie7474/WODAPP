@@ -1,18 +1,22 @@
 import React from 'react';
+import {Text, View,} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Home from "./HomeScreen";
+import HomeScreen from "./HomeScreen";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 
 const Stack = createNativeStackNavigator();
 
-const Routes = () => (
-  <Stack.Navigator initialRouteName='SignIn' screenOptions={{headerShown: false}}>
-    <Stack.Screen name="Home" component={Home}/>
-    <Stack.Screen name="SignIn" component={SignIn}/>
-    <Stack.Screen name="SignUp" component={SignUp}/>
+const Navigation = () => (
+  <NavigationContainer>
+  <Stack.Navigator>
+    <Stack.Screen name="WODAPP" component={HomeScreen}/>
+    <Stack.Screen name="Se Connecter" component={SignIn}/>
+    <Stack.Screen name="Creer Compte" component={SignUp}/>
   </Stack.Navigator>
+  </NavigationContainer>
 );
 
 export default Routes;
