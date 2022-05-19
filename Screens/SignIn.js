@@ -1,12 +1,12 @@
 import { useNavigation } from '@react-navigation/core'
 import React, {useEffect, useState }from 'react'
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Button} from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Button, Pressable} from 'react-native'
 
 
-function SignIn({ navigation }) {
+function SignIn({ navigation },props) {
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
+  const { onPress, title = 'Valider' } = props;
   return (
     <View style={styles.container}>
     <Text style={styles.welcome}>WODAPP</Text>
@@ -24,8 +24,10 @@ function SignIn({ navigation }) {
         onChangeText={text => setPassword(text)}
         secureTextEntry
       />
-     <Button style={styles.button} title="Valider"onPress={() => navigation.navigate('WODAPP')} />
-
+       <Pressable style={styles.button} onPress={() => navigation.navigate('WODAPP')}>
+    <Text style={styles.text}>{title}</Text>
+    </Pressable> 
+    
      <View style={{flexDirection: 'row', marginTop: 20}}>
           <Text>Don't have an account? </Text>
           <TouchableOpacity onPress={() => navigation.navigate('Register')}>
@@ -55,14 +57,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
   },
   button:{
-    justifyContent:'center',
-    padding: 10,
-    marginTop: 1,
-    marginBottom: 50,
-    marginLeft:10,
-    marginRight:10,
+    alignSelf: 'center',
     backgroundColor:'#4282F4',
-    borderRadius:10,
+    paddingHorizontal: '25%',
+    paddingVertical: 10,
+    borderRadius: 10,
+    elevation: 12,
+  },
+  text: {
+    textAlign: 'center',
+    fontSize: 15,
     color:'#3E3E3E',
   },
   link:{

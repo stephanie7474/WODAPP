@@ -1,13 +1,14 @@
-import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View,Button,} from 'react-native'
+import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View,Button, Pressable} from 'react-native'
 import React,{useState}from 'react'
 
 
-const SignUp =({navigation}) => {
+const SignUp =({navigation},props) => {
   const [firstName, setFirstname] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
- 
+  const { onPress, title = 'Valider' } = props;
+
   return (
     <View style={styles.container}>
       <TextInput 
@@ -35,7 +36,10 @@ const SignUp =({navigation}) => {
         onChangeText={setPassword}
         secureTextEntry
       />
-         <Button style={[styles.button,styles.color]} title="Valider" onPress={() => navigation.navigate('Login')}/>
+       <Pressable style={styles.button} onPress={() => navigation.navigate('Login')}>
+    <Text style={styles.text}>{title}</Text>
+    </Pressable> 
+    
             
          <View style={{flexDirection: 'row', marginTop: 20}}>
           <Text>Already have on account ? </Text>
@@ -53,9 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center', 
-  // },
-  // wrapper:{
-  //   width:'80%',
+  
   },
   input: {
     marginBottom: 12,
@@ -65,14 +67,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
   },
   button:{
-    justifyContent:'center',
-    padding: 10,
-    marginTop: 1,
-    marginBottom: 50,
-    marginLeft:10,
-    marginRight:10,
+    alignSelf: 'center',
     backgroundColor:'#4282F4',
-    borderRadius:10,
+    paddingHorizontal: '25%',
+    paddingVertical: 10,
+    borderRadius: 10,
+    elevation: 12,
+   
+  },
+  text: {
+    textAlign: 'center',
+    fontSize: 15,
     color:'#3E3E3E',
   },
   link:{
