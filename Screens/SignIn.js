@@ -24,12 +24,12 @@ function SignIn({ navigation }) {
         onChangeText={text => setPassword(text)}
         secureTextEntry
       />
-     <Button style={styles.button} title="Login"onPress={() => navigation.navigate('WODAPP')} />
+     <Button style={styles.button} title="Valider"onPress={() => navigation.navigate('WODAPP')} />
 
      <View style={{flexDirection: 'row', marginTop: 20}}>
           <Text>Don't have an account? </Text>
           <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-            <Text style={styles.link}>Register</Text>
+            <Text style={styles.link}>S'enregister</Text>
           </TouchableOpacity>
         </View>
         </View>

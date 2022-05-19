@@ -9,7 +9,7 @@ export default function HomeScreen(props) {
     <View style={styles.container}>
     <Text style={styles.welcome}>WODAPP</Text>
     <Text style={styles.welcome}>Bienvenue</Text>
-    <Button style={styles.button} title="Login"onPress={() => navigation.navigate('Login')} />
+    <Button style={styles.button} title="Mes WOD"onPress={() => navigation.navigate('Login')} />
 
    
   </View>

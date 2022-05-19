@@ -35,7 +35,7 @@ const SignUp =({navigation}) => {
         onChangeText={setPassword}
         secureTextEntry
       />
-         <Button style={[styles.button,styles.color]} title="register" onPress={() => navigation.navigate('Login')}/>
+         <Button style={[styles.button,styles.color]} title="Valider" onPress={() => navigation.navigate('Login')}/>
             
          <View style={{flexDirection: 'row', marginTop: 20}}>
           <Text>Already have on account ? </Text>
