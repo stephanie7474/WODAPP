@@ -12,11 +12,13 @@ const Stack = createNativeStackNavigator();
 const Navigation = () => (
   <NavigationContainer>
   <Stack.Navigator>
-    <Stack.Screen name="WODAPP" component={HomeScreen}/>
-    <Stack.Screen name="Se Connecter" component={SignIn}/>
-    <Stack.Screen name="Creer Compte" component={SignUp}/>
+   
+    <Stack.Screen name="Login" component={SignIn}options={{headerShown: false}}/>
+    <Stack.Screen name="Register" component={SignUp}options={{headerShown: false}}/>  
+
+    <Stack.Screen name="WODAPP" component={HomeScreen}options={{headerShown: false}}/>
   </Stack.Navigator>
   </NavigationContainer>
 );
 
-export default Routes;
+export default Navigation;

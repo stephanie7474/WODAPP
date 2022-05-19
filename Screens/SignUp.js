@@ -1,8 +1,8 @@
-import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native'
+import {KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View,Button,} from 'react-native'
 import React,{useState}from 'react'
-import Button from './Button'
 
-function SignUp() {
+
+const SignUp =({navigation}) => {
   const [firstName, setFirstname] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -18,7 +18,7 @@ function SignUp() {
       />
       <TextInput
       style={styles.input}
-        placeholder="Name"
+        placeholder="Enter name"
         value={name}
         onChangeText={setName}
       />
@@ -35,29 +35,27 @@ function SignUp() {
         onChangeText={setPassword}
         secureTextEntry
       />
-       <Button
-       text="Valider"
-       buttonCustomStyles={{
-         backgroundColor: "#4282F4",
-         borderRadius: 8,
-         marginTop: 10
-       }}
-       textCustomStyles={{
-         color: "#3E3E3E"
-       }}
-      onPress={() => signIn({ name, password, firstName, email })} />
+         <Button style={[styles.button,styles.color]} title="register" onPress={() => navigation.navigate('Login')}/>
+            
+         <View style={{flexDirection: 'row', marginTop: 20}}>
+          <Text>Already have on account ? </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+            <Text style={styles.link}>Login</Text>
+          </TouchableOpacity>
+        </View>
     </View>
   );
 }
 
 
-export default SignUp
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center', 
+  // },
+  // wrapper:{
+  //   width:'80%',
   },
   input: {
     marginBottom: 12,
@@ -66,4 +64,19 @@ const styles = StyleSheet.create({
     borderColor: '#bbb',
     paddingHorizontal: 14,
   },
+  button:{
+    justifyContent:'center',
+    padding: 10,
+    marginTop: 1,
+    marginBottom: 50,
+    marginLeft:10,
+    marginRight:10,
+    backgroundColor:'#4282F4',
+    borderRadius:10,
+    color:'#3E3E3E',
+  },
+  link:{
+    color:'#4282F4',
+  }
 })
+export default SignUp
