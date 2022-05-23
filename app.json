@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "WODAPP",
-    "slug": "WODAPP",
+    "name": "wodapp",
+    "slug": "wodapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
